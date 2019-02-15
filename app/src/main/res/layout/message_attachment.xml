@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/attachment_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:paddingEnd="@dimen/screen_edge_left_and_right_margins"
+    android:paddingStart="72dp">
+
+
+    <TextView
+        android:id="@+id/file_name"
+        style="@style/Message.TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Filename.png" />
+
+    <TextView
+        android:id="@+id/file_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Some description" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/image_attachment"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:visibility="visible"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:placeholderImage="@drawable/image_dummy" />
+
+    <FrameLayout
+        android:id="@+id/audio_video_attachment"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/colorBlack"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/exo_controls_play" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/file_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Some text" />
+
+    <include
+        layout="@layout/layout_reactions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

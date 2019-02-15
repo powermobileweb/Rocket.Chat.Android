@@ -1,0 +1,91 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:padding="@dimen/screen_edge_left_and_right_margins"
+    tools:context=".authentication.signup.ui.SignupFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text_sign_up"
+            style="@style/Authentication.TextView.Headline"
+            android:text="@string/title_sign_up"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/text_name"
+            style="@style/Authentication.EditText.Border"
+            android:layout_marginTop="16dp"
+            android:drawableStart="@drawable/ic_person_black_20dp"
+            android:hint="@string/msg_name"
+            android:imeOptions="actionNext"
+            android:inputType="textCapWords"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_sign_up" />
+
+        <EditText
+            android:id="@+id/text_username"
+            style="@style/Authentication.EditText.Border"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_at_black_20dp"
+            android:hint="@string/msg_username"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_name" />
+
+        <EditText
+            android:id="@+id/text_password"
+            style="@style/Authentication.EditText.Border"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_key_black_20dp"
+            android:hint="@string/msg_password"
+            android:imeOptions="actionNext"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_username" />
+
+        <EditText
+            android:id="@+id/text_email"
+            style="@style/Authentication.EditText.Border"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_email_black_20dp"
+            android:hint="@string/msg_email"
+            android:imeOptions="actionDone"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_password" />
+
+        <android.widget.Button
+            android:id="@+id/button_register"
+            style="@style/Authentication.Button"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/colorAuthenticationButtonDisabled"
+            android:enabled="false"
+            android:text="@string/action_register"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_email" />
+
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/view_loading"
+            style="@style/Authentication.AVLoadingIndicatorView"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

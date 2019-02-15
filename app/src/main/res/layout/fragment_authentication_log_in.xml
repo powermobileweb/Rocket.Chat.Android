@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/screen_edge_left_and_right_margins"
+    tools:context=".authentication.login.ui.LoginFragment">
+
+    <TextView
+        android:id="@+id/text_login"
+        style="@style/Authentication.TextView.Headline"
+        android:text="@string/title_log_in"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/text_username_or_email"
+        style="@style/Authentication.EditText.Border"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/ic_at_black_20dp"
+        android:hint="@string/msg_username_or_email"
+        android:imeOptions="actionNext"
+        android:inputType="textEmailAddress|text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_login" />
+
+    <EditText
+        android:id="@+id/text_password"
+        style="@style/Authentication.EditText.Border"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/ic_key_black_20dp"
+        android:hint="@string/msg_password"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_username_or_email" />
+
+    <android.widget.Button
+        android:id="@+id/button_log_in"
+        style="@style/Authentication.Button"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/colorAuthenticationButtonDisabled"
+        android:enabled="false"
+        android:text="@string/title_log_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_password" />
+
+    <android.widget.Button
+        android:id="@+id/button_forgot_your_password"
+        style="@style/Authentication.Button.Borderless"
+        android:layout_marginTop="10dp"
+        android:text="@string/msg_forgot__your_password"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_log_in"
+        tools:visibility="visible" />
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/view_loading"
+        style="@style/Authentication.AVLoadingIndicatorView"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
